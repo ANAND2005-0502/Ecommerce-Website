@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Owner Dashboard — FreshBasket</title>
+<link rel="stylesheet" href="style.css" />
+<base target="_blank">
+</head>
+<body>
+<header class="admin-header">
+  <div class="container inner">
+    <a class="amazon-logo" style="border:none" href="index.html">🥕 fresh<span style="color:var(--amazon-orange)">basket</span> <em class="badge-owner">Owner</em></a>
+    <a href="index.html">← View Store</a>
+  </div>
+</header>
+
+<main class="container admin-layout">
+
+  <!-- Add / Edit form -->
+  <section class="panel">
+    <h2 id="form-title">➕ Add New Ingredient</h2>
+    <form id="product-form" autocomplete="off">
+      <input type="hidden" id="p-id" />
+
+      <label>Ingredient Name *</label>
+      <input type="text" id="p-name" placeholder="e.g. Organic Turmeric Powder" required />
+
+      <label>Price (per unit) *</label>
+      <input type="number" id="p-price" placeholder="e.g. 4.99" min="0" step="0.01" required />
+
+      <label>Unit</label>
+      <select id="p-unit">
+        <option value="kg">per kg</option>
+        <option value="500g">per 500 g</option>
+        <option value="250g">per 250 g</option>
+        <option value="L">per litre</option>
+        <option value="pc">per piece</option>
+        <option value="pack">per pack</option>
+      </select>
+
+      <label>Category *</label>
+      <select id="p-category" required>
+        <option value="Spices">Spices</option>
+        <option value="Grains & Pulses">Grains & Pulses</option>
+        <option value="Dairy & Eggs">Dairy & Eggs</option>
+        <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+        <option value="Baking">Baking</option>
+        <option value="Oils & Condiments">Oils & Condiments</option>
+      </select>
+
+      <label>Stock Quantity *</label>
+      <input type="number" id="p-stock" placeholder="e.g. 50" min="0" step="1" required />
+
+      <label>Image URL (optional)</label>
+      <input type="url" id="p-image" placeholder="https://... or leave empty for auto emoji" />
+
+      <label>Short Description</label>
+      <textarea id="p-desc" rows="3" placeholder="Freshly ground, single-origin..."></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-add" id="save-btn">Add Ingredient</button>
+        <button type="button" class="btn btn-ghost" id="cancel-edit" hidden>Cancel Edit</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Product list -->
+  <section class="panel">
+    <div class="list-head">
+      <h2>📦 Your Ingredients <span id="prod-count" class="count-pill"></span></h2>
+    </div>
+    <div id="admin-list" class="admin-list"></div>
+    <p id="admin-empty" class="empty-msg" hidden>No ingredients yet — add your first one!</p>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

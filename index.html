@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FreshBasket — Ingredients Store</title>
+<link rel="stylesheet" href="style.css" />
+<base target="_blank">
+</head>
+<body>
+
+<!-- ======== AMAZON-STYLE HEADER ======== -->
+<header class="amazon-header">
+  <div class="header-top">
+    <a class="amazon-logo" href="index.html">🥕 fresh<span class="logo-orange">basket</span></a>
+
+    <a class="deliver-to" href="#">
+      <span class="pin">📍</span>
+      <span><small>Deliver to</small><strong>Chef City 40001</strong></span>
+    </a>
+
+    <form class="search-wrap" id="search-form">
+      <select id="category-filter">
+        <option value="all">All</option>
+      </select>
+      <input type="search" id="search-input" placeholder="Search for spices, rice, olive oil and more" />
+      <button type="submit" class="search-btn">🔍</button>
+    </form>
+
+    <div class="header-links">
+      <a class="header-link" href="admin.html"><small>Hello, Owner</small><strong>Dashboard</strong></a>
+      <a class="header-link" href="#"><small>Returns</small><strong>&amp; Orders</strong></a>
+      <a class="cart-link" id="cart-btn">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+        <strong>Cart</strong>
+      </a>
+    </div>
+  </div>
+
+  <nav class="subnav">
+    <a class="all-btn" href="#">☰ All</a>
+    <a href="#" id="subnav-deals">Today's Deals</a>
+    <a href="#">Spices</a>
+    <a href="#">Grains &amp; Pulses</a>
+    <a href="#">Dairy &amp; Eggs</a>
+    <a href="#">Fresh Produce</a>
+    <a href="#">Baking</a>
+    <a href="#">Oils &amp; Condiments</a>
+    <span class="spacer"></span>
+    <a href="admin.html" class="deals">➕ Sell / Add Ingredients</a>
+  </nav>
+</header>
+
+<!-- ======== HERO ======== -->
+<section class="hero-strip">
+  <div class="container">
+    <h1>Everything for your kitchen</h1>
+    <p>Fresh ingredients with fast delivery — deals updated daily</p>
+  </div>
+</section>
+
+<main class="container">
+  <div class="results-bar" id="results-bar"><strong>Results</strong></div>
+  <div id="product-grid" class="product-grid"></div>
+  <p id="empty-msg" class="empty-msg" hidden>
+    No ingredients found. Try another search — or the owner can add products from the Dashboard.
+  </p>
+</main>
+
+<!-- ======== CART DRAWER ======== -->
+<div id="cart-overlay" class="cart-overlay" hidden></div>
+<aside id="cart-drawer" class="cart-drawer" hidden>
+  <div class="cart-head">
+    <h2>🛒 Shopping Cart</h2>
+    <button id="close-cart" class="icon-btn">✕</button>
+  </div>
+  <div id="cart-items" class="cart-items"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row">
+      <span>Subtotal:</span>
+      <span class="amt" id="cart-total">$0.00</span>
+    </div>
+    <button id="checkout-btn" class="btn-addcart">Proceed to Buy</button>
+  </div>
+</aside>
+
+<!-- ======== AMAZON-STYLE FOOTER ======== -->
+<footer>
+  <div class="back-to-top" id="back-to-top">Back to top</div>
+  <div class="footer-main">
+    <div class="footer-col">
+      <h4>Get to Know Us</h4>
+      <a href="#">About FreshBasket</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Releases</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shop With Us</h4>
+      <a href="#">Your Account</a>
+      <a href="#">Your Orders</a>
+      <a href="#">Shipping Rates</a>
+    </div>
+    <div class="footer-col">
+      <h4>For Owners</h4>
+      <a href="admin.html">Seller Dashboard</a>
+      <a href="#">Add Ingredients</a>
+      <a href="#">Manage Inventory</a>
+    </div>
+    <div class="footer-col">
+      <h4>Let Us Help You</h4>
+      <a href="#">Customer Service</a>
+      <a href="#">Returns Centre</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 FreshBasket — Built for ingredient sellers.</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
